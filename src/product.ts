@@ -42,9 +42,6 @@ get Categoty(): Categoty {
   }
 }
 
-set Categoty(value: Categoty) {
- 
-  }
 
 
 
