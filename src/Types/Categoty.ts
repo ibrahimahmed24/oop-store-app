@@ -1,0 +1,1 @@
+export type Categoty =  "physics" | "digital"
