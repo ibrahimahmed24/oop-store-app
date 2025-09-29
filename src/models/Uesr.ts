@@ -1,14 +1,20 @@
-abstract class User {
+import { CustmerPermission, Usertype } from "src/Types/Users";
+
+export abstract class User {
+     protected readonly userId: number;
      private static _nextId = 1;
+
+
      constructor(
-          protected readonly userId: number,
           protected _name: string,
           protected _email: string
-     ) { }
+     ) { 
+          this.userId = User._nextId++;
+     }
 
-     abstract getRole(): string;
+     abstract getRole(): Usertype;
 
-     abstract getPermissions(): string;
+     abstract getPermissions(): CustmerPermission[];
 
      public getinfo(): string {
   return `${this._name} (${this._email} ___Role: ${this.getRole()})`;
